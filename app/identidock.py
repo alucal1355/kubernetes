@@ -21,7 +21,7 @@ def mainpage():
 
 @app.route('/monster/<name>')
 def get_identicon(name):
-	r = requests.get('http://dnmonster:8080/monster/' + name + '?size=80')
+	r = requests.get('https://sebsauvage.net/robohash/' + name + '?size=80')
 	image = r.content
 	return Response(image, mimetype='image/png')
 	
