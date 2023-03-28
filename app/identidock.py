@@ -13,7 +13,7 @@ def mainpage():
 			<input type="submit" value="submit">
 			</form>
 			<p>Te pareces a:
-			<img src="/monster/monster.png"/>
+			<img src="image.png"/>
 			'''.format(name)
 	footer = '</body></html>'
 	
@@ -21,7 +21,7 @@ def mainpage():
 
 @app.route('/monster/<name>')
 def get_identicon(name):
-	r = requests.get('https://sebsauvage.net/robohash/' + name + '?size=80')
+	r = requests.get('https://api.multiavatar.com/' + name + '?size=80')
 	image = r.content
 	return Response(image, mimetype='image/png')
 	
